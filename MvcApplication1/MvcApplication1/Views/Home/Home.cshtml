@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+@*<h2>Home</h2>*@
+<div class="row">
+    <div class="col-md-4">
+        <img src="~/Content/Images/home1.png" width="400" height="400" />
+    </div>
+    <div class="col-md-8">
+        <h1 class="tag-line" style="margin-top: 80px; margin-left: 50px; color: #2d4057">Tư Vấn
+            <br />
+            <span style="color: darkblue; font-size: 35pt; text-align: justify">Sinh Viên CNTT Chọn Chuyên Ngành</span>
+        </h1>
+            @*<div class="form-group">*@
+               @* <select class="">
+                    <option value="0">Các chuyên ngành</option>
+                    <option value="1">Công nghệ phần mềm</option>
+                    <option value="2">Hệ thống thông tin</option>
+                    <option value="3">Mạng máy tính</option>
+                    <option value="4">Khoa học & Phân tích dữ liệu</option>
+                </select>*@
+
+            @*</div>*@
+        <div class="form-group">
+            <a href="@Url.Action("Index", "Home")">
+                <button class="flex-center btn btn-danger btn-fluid" type="button" style="margin-left: 0; margin-right: 0; margin-top: 80px; margin-left: 50px; width: 35rem; height: 50px;"><span class="text-justify" style="font-size: 16pt">Tư vấn ngay</span></button></a>
+
+        </div>
+    </div>
+</div>
+<div id="cr" class="carousel mx-auto mt-0" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="~/Content/carousel/iStock-1189916297-914x350@2x.jpg" class="d-block w-100" />
+                    </div>
+                    <div class="carousel-item ">
+                        <img src="~/Content/carousel/công-nghệ-thông-tin-4_0.jpg" class="d-block w-100" />
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <img src="~/Content/carousel/programming-scaled.jpeg" class="d-block w-100" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="~/Content/carousel/web_4-6.jpg" class="d-block w-100" />
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#cr" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next" href="#cr" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+            </div>

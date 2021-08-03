@@ -1,0 +1,216 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+@model MvcApplication1.Models.User
+<style>
+    .main {
+        position: absolute;
+        top: 12vh;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 0px 5px 0px #000;
+    }
+
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #42a7a9;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+    }
+
+        input[type=text]:focus {
+            border: 3px solid #42a7a9;
+        }
+</style>
+@*<!--Bootstrap 4-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>*@
+@using MvcApplication1.Models;
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    {
+    @*<div class="container">*@
+        <form>
+            <h2 style="color: deepskyblue; text-align: center;" class="mt-3">Nhập kết quả học tập</h2>
+
+            @*<div class="main" style="border: 3px solid #2EFEF7">*@
+            <div class="form-group">
+                <label class="text-justify" style="font-weight: bold; font-size: 15pt;">Họ và tên:</label>
+                @Html.TextBoxFor(model => model.Name, new
+               {
+                   @class = "form-control",
+                   placeHolder = "Enter Your Name"
+               })
+                @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
+            </div>
+            <p class="m-0 mb-1 text-danger" >(*)Nhập theo thang điểm 10.</p>
+            <div class="form-group">
+                <label class="text-justify" style="font-weight: bold; font-size: 15pt;">Điểm Nhập Môn Lập Trình:</label>
+                <div class="row">
+                    <div class=" col-md">
+                        @Html.TextBoxFor(model => model.diemNhapMonLT, new
+               {
+                   @class = "form-control",
+                   placeHolder = "Điểm Lý Thuyết"
+               })
+                        @Html.ValidationMessageFor(model => model.diemNhapMonLT, null, new { @class = "text-danger" })
+
+                    </div>
+                    <div class=" col-md">
+                        @Html.TextBoxFor(model => model.diemNhapMonTH, new
+               {
+                   @class = "form-control",
+                   placeHolder = "Điểm Thực Hành"
+               })
+
+                        @Html.ValidationMessageFor(model => model.diemNhapMonTH, null, new { @class = "text-danger" })
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="text-justify" style="font-weight: bold; font-size: 15pt;">Điểm Lập trình hướng đối tượng:</label>
+                <div class="row">
+                    <div class="col-md">
+                        @Html.TextBoxFor(model => model.diemLapTrinhHDTLT, new
+               {
+                   @class = "form-control",
+                   placeHolder = "Điểm Lý Thuyết"
+               })
+                        @Html.ValidationMessageFor(model => model.diemLapTrinhHDTLT, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md">
+                        @Html.TextBoxFor(model => model.diemLapTrinhHDTTH, new
+               {
+                   @class = "form-control",
+                   placeHolder = "Điểm Thực Hành"
+               })
+                        @Html.ValidationMessageFor(model => model.diemLapTrinhHDTTH, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="text-justify" style="font-weight: bold; font-size: 15pt;">Điểm Cấu Trúc Dữ Liệu & Giải Thuật:</label>
+                <div class="row">
+                    <div class="col-md">
+                        @Html.TextBoxFor(model => model.diemCauTrucDLLT, new
+               {
+                   @class = "form-control",
+                   placeHolder = "Điểm Lý Thuyết"
+               })
+                        @Html.ValidationMessageFor(model => model.diemCauTrucDLLT, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md">
+                        @Html.TextBoxFor(model => model.diemCauTrucDLTH, new
+               {
+                   @class = "form-control",
+                   placeHolder = "Điểm Thực Hành"
+               })
+                        @Html.ValidationMessageFor(model => model.diemCauTrucDLTH, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="text-justify" style="font-weight: bold; font-size: 15pt;">Điểm Cơ Sở Dữ Liệu:</label>
+                <div class="row">
+                    <div class="col-md">
+                        @Html.TextBoxFor(model => model.diemCoSoDLLT, new
+               {
+                   @class = "form-control",
+                   placeHolder = "Điểm Lý Thuyết"
+               })
+                        @Html.ValidationMessageFor(model => model.diemCoSoDLLT, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md">
+                        @Html.TextBoxFor(model => model.diemCoSoDLTH, new
+               {
+                   @class = "form-control",
+                   placeHolder = "Điểm Thực Hành"
+               })
+                        @Html.ValidationMessageFor(model => model.diemCoSoDLTH, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label class="text-justify" style="font-weight: bold; font-size: 15pt;">Điểm Hệ Quản Trị Cơ Sở Dữ Liệu:</label>
+                @Html.TextBoxFor(model => model.diemHeQuanTCSDL, new
+               {
+                   @class = "form-control",
+                   placeHolder = "Điểm hệ 10"
+               })
+                @Html.ValidationMessageFor(model => model.diemHeQuanTCSDL, null, new { @class = "text-danger" })
+            </div>
+           @* <div class="form-group">
+                <label class="text-justify" style="font-weight: bold; font-size: 15pt;">Điểm Kiến Trúc Máy Tính:</label>
+                @Html.TextBoxFor(model => model.diemKienTrucMT, new
+               {
+                   @class = "form-control",
+                   placeHolder = "Điểm hệ 10"
+               })
+                @Html.ValidationMessageFor(model => model.diemKienTrucMT, null, new { @class = "text-danger" })
+            </div>*@
+
+            <div class="form-group">
+                <label class="text-justify" style="font-weight: bold; font-size: 15pt;">Điểm Hệ Điều Hành:</label>
+                @Html.TextBoxFor(model => model.diemHeDieuH, new
+               {
+                   @class = "form-control",
+                   placeHolder = "Điểm hệ 10"
+               })
+                @Html.ValidationMessageFor(model => model.diemHeDieuH, null, new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                <label class="text-justify" style="font-weight: bold; font-size: 15pt;">Điểm Mạng Máy Tính:</label>
+                <div class="row">
+                    <div class="col-md">
+                        @Html.TextBoxFor(model => model.diemMangMayTinhLT, new
+               {
+                   @class = "form-control",
+                   placeHolder = "Điểm Lý Thuyết"
+               })
+                        @Html.ValidationMessageFor(model => model.diemMangMayTinhLT, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md">
+                        @Html.TextBoxFor(model => model.diemMangMayTinhTH, new
+               {
+                   @class = "form-control",
+                   placeHolder = "Điểm Thực Hành"
+               })
+                        @Html.ValidationMessageFor(model => model.diemMangMayTinhTH, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label class="text-justify" style="font-weight: bold; font-size: 15pt;">Điểm Trí Tuệ Nhân Tạo:</label>
+                @Html.TextBoxFor(model => model.diemTriTueNT, new
+               {
+                   @class = "form-control",
+                   placeHolder = "Điểm hệ 10"
+               })
+                @Html.ValidationMessageFor(model => model.diemTriTueNT, null, new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" class="btn btn-danger" value="SUBMIT" />
+            </div>
+        </form>
+    @*</div>*@
+    }
+}

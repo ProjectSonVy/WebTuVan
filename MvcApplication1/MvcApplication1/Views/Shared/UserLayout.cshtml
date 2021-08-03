@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        ul li {
+            font-size:13pt;
+        }
+        .dep_CNPM {
+            border-left: 8px #45b29d solid;
+            color: #45b29d;
+        }
+
+        .dep_HTTT {
+            border-left: 8px #4000FF solid;
+            color: #4000FF;
+        }
+
+        .dep_MMT {
+            border-left: 8px #FE9A2E solid;
+            color: #FE9A2E;
+        }
+
+        .dep_PTDL {
+            border-left: 8px #FF0040 solid;
+            color: #FF0040;
+        }
+
+        .dep_item {
+            padding: 10px;
+            background: #fff;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.3em;
+            margin-bottom: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+            @*<a class="navbar-brand row" href="#">
+                    <img src="~/Content/hufi.png" width="100%" class="rounded w-25"  />LoGo gi do.</a>*@
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <li class="nav-item nav-link">
+                        <span style="color: white">@Html.ActionLink("Trang chủ ", "Home", "Home", new { @class = "text-white" })</span>
+                    </li>
+                    <li class="nav-item nav-link">
+                        <span>@Html.ActionLink("Giới thiệu", "GioiThieu", "Home", new { @class = "text-white" })</span>
+                    </li>
+                    <li class="nav-item nav-link">
+                        <span>@Html.ActionLink("Tài liệu chuyên ngành ", "", "", new { @class = "text-white" })</span>
+                    </li>
+                    <li class="nav-item nav-link">
+                        <span>@Html.ActionLink("Liên hệ ", "", "", new { @class = "text-white" })</span>
+                    </li>
+                </ul>
+                <input class="form-control mr-2 " type="search" placeholder="Search" aria-label="Search" style="width:500px">
+                <button class="btn " type="submit">
+                    <i class="fa fa-search" style="font-size:24px"></i></button>
+            </div>
+
+            <div class="collapse navbar-collapse ml-4" id="navbarSupportedContent1">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            Languages  
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">
+                                <img src="~/Content/Images/VietNamFlag.JPG" />
+                                VietNamese</a></li>
+                            <li><a class="dropdown-item" href="#">
+                                <img src="~/Content/Images/EnglishFlag.JPG" />
+                                English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-8">
+                @RenderBody()
+            </div>
+            <div class="col-md-3">
+                <h2>Bộ môn
+                    <br />
+                    <span class="text-justify" style="color: hotpink; font-weight: bold">Chuyên ngành</span>
+                </h2>
+                <div class="dep_item dep_CNPM">
+                    <div class="row">
+                        <div class="col-md">
+                            <img class="img-responsive" src="~/Content/Images/cnpm_thumb.jpg" width="180" height="150" />
+
+                        </div>
+                        <div style="margin-right: 70px; margin-top: 30px" class="col-md">
+                            Công Nghệ
+                        <br />
+                            Phần Mềm
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="dep_item dep_HTTT">
+                    <div class="row">
+                        <div class="col-md">
+                            <img class="img-responsive" src="~/Content/Images/httt_thumb.jpg" width="180" height="150" />
+                        </div>
+                        <div style="margin-right: 70px; margin-top: 30px" class="col-md">
+                            Hệ Thống
+                            <br />
+                            Thông Tin
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dep_item dep_MMT">
+                    <div class="row">
+                        <div class="col-md col-sm">
+                            <img class="img-responsive" src="~/Content/Images/mmt_thumb.jpg" width="180" height="150" />
+                        </div>
+                        <div style="margin-right: 70px; margin-top: 30px" class="col-md col-sm">
+                            Mạng
+                            <br />
+                            Máy Tính
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dep_item dep_PTDL">
+                    <div class="row">
+                        <div class="col-md col-sm">
+                            <img class="img-responsive" src="~/Content/Images/ptdl_thumb.jpg" width="180" height="150" />
+                        </div>
+                        <div style="margin-right: 70px; margin-top: 25px" class="col-md">
+                            <p>Khoa Học & Phân Tích Dữ Liệu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--Footer-->
+        <div class="row bg-info" @*style="background-color: #101215;"*@>
+            <div class="col text-light mt-3 mb-3" style="margin-left: 20px">
+                <span style="color: whitesmoke; font-weight: bold; font-size: 16pt; text-align: center;">KHOA CÔNG NGHỆ THÔNG TIN</span>
+                <p style="margin-top: 10px;">Trường Đại Học Công Nghiệp Thực Phẩm TP.HCM</p>
+                <p>Địa chỉ: 140 Lê Trọng Tấn, Phường Tây Thạnh, Quận Tân Phú, Tp.HCM. </p>
+                <p>ĐT: (028).38161673 (ext 136) </p>
+                <p>Mail: kcntt@hufi.edu.vn </p>
+            </div>
+            <div class="col text-light mt-3 mb-3" style="text-align: center;">
+                <span style="color: whitesmoke; font-weight: bold; font-size: 16pt;">LIÊN KẾT</span>
+                <p style="margin-top: 10px;">Học tập</p>
+                <p>Luyện tập</p>
+                <p>Cuộc thi</p>
+                <p>Trò chơi</p>
+            </div>
+            <div class="col text-light mt-3 mb-3" style="text-align: center;">
+                <span style="color: whitesmoke; font-weight: bold; font-size: 16pt;">THÔNG TIN</span>
+                <p style="margin-top: 10px;">Chia sẻ</p>
+                <p>Về chúng tôi</p>
+                <p>Điều khoản sử dụng</p>
+            </div>
+            <div class="col text-light mt-3 mb-3" style="text-align: center;">
+                <span style="color: whitesmoke; font-weight: bold; font-size: 16pt;">TRỢ GIÚP</span>
+                <p style="margin-top: 10px;">Hỗ trợ</p>
+                <p>Thảo luận</p>
+                <p>Liên hệ với chúng tôi</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

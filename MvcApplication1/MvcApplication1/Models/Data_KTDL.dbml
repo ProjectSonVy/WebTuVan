@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Data_KTDL" Class="Data_KTDLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-6LRTFVD\SQLEXPRESS;Initial Catalog=Data_KTDL;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Data_KTDLConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CNPM" Member="CNPMs">
+    <Type Name="CNPM">
+      <Column Name="NMLT_LT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NMLT_TH" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LTHDT_LT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LTHDT_TH" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CTDL_LT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CTDL_TH" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HTTT" Member="HTTTs">
+    <Type Name="HTTT">
+      <Column Name="NMLT_LT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NMLT_TH" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CSDL_LT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CSDL_TH" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HQTCSDL" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHPTDL" Member="KHPTDLs">
+    <Type Name="KHPTDL">
+      <Column Name="CTDLGT_LT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CTDLGT_TH" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CSDL_LT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CSDL_TH" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TTNT" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MMT" Member="MMTs">
+    <Type Name="MMT">
+      <Column Name="NMLT_LT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NMLT_TH" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HDH" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MMT_LT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MMT_TH" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

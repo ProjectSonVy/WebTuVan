@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "KetQua";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+<style>
+    .table td ,th,td,tr {
+        border:2px solid #42a7a9;
+    }
+</style>
+@using MvcApplication1.Models;
+@model User
+<h2 style="color: darkblue;text-align:center;" class="mt-4">KẾT QUẢ TƯ VẤN</h2>
+    @{ var info = HttpContext.Current.Session["info"] as User;}
+<h4><img src="~/Content/Images/images.png" width="35" />Họ và Tên : <span style="color:red;"> @info.Name</span> </h4>
+<div class=" table-reponsive-md"  >
+    <table class=" table table-bordered table-hover w-100" style="border:2px solid #42a7a9;font-size:18px">
+        <thead class="table-info"    >
+            <tr >
+                <th style="border:2px solid #42a7a9" width="10%">Môn học - Điểm</th>
+                <th style="border:2px solid #42a7a9" >Nhập Môn Lập Trình</th>
+                <th style="border:2px solid #42a7a9">Lập Trình Hướng Đối Tượng</th>
+                <th style="border:2px solid #42a7a9">Cấu Trúc Dữ Liệu & Giải Thuật</th>
+                <th style="border:2px solid #42a7a9">Cơ Sở Dữ Liệu</th>
+                <th style="border:2px solid #42a7a9">Hệ Quản Trị Cơ Sở Dữ Liệu</th>
+                <th style="border:2px solid #42a7a9">Hệ Điều Hành</th>
+                <th style="border:2px solid #42a7a9">Mạng Máy Tính</th>
+                <th style="border:2px solid #42a7a9">Trí Tuệ Nhân Tạo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Lý Thuyết</th>
+                <td>@info.diemNhapMonLT</td>
+                <td>@info.diemLapTrinhHDTLT</td>
+                <td>@info.diemCauTrucDLLT</td>
+                <td>@info.diemCoSoDLLT</td>
+                <td>@info.diemHeQuanTCSDL</td>
+                <td>@info.diemHeDieuH</td>
+                <td>@info.diemMangMayTinhLT</td>
+                <td>@info.diemTriTueNT</td>
+            </tr>
+            <tr>
+                <th>Thực Hành</th>
+                <td>@info.diemNhapMonTH</td>
+                <td>@info.diemLapTrinhHDTTH</td>
+                <td>@info.diemCauTrucDLTH</td>
+                <td>@info.diemCoSoDLTH</td>
+                <td colspan="2"></td>
+@*                <td></td>
+                <td></td>*@
+                <td>@info.diemMangMayTinhTH</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Kết Quả</th>
+                <td colspan="9" style="text-align:center;font-weight:bold;color:red;font-size:18pt"><span style="font-weight:normal;font-size:20px;color:black">Chuyên ngành tư vấn cho bạn là : </span>@ViewBag.tb</td>
+            </tr>
+        </tbody>
+    </table>
+    @Html.ActionLink("Go to back", "Index", "Home", new { @class="float-right",style="font-size:19px"})
+</div>
